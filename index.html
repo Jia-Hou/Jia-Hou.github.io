@@ -202,6 +202,61 @@
       .experience-item { gap: .8rem; }
       .experience-logo { flex-basis: 56px; width: 56px; height: 56px; font-size: 1.4rem; }
     }
+
+    .sidebar-visitor {
+      margin-top: 1.2rem;
+      padding: 0.9rem 0.55rem;
+      text-align: center;
+      background: var(--bg-color);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .sidebar-visitor .visitor-title {
+      margin-bottom: 0.55rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+    .sidebar-visitor .visitor-globe {
+      width: 100%;
+      min-height: 170px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .sidebar-visitor .visitor-globe iframe,
+    .sidebar-visitor .visitor-globe canvas,
+    .sidebar-visitor .visitor-globe svg,
+    .sidebar-visitor .visitor-globe img {
+      max-width: 100% !important;
+    }
+    .sidebar-visitor .visitor-note {
+      margin: 0.45rem 0 0;
+      color: var(--muted-color);
+      font-size: 0.68rem;
+      line-height: 1.45;
+    }
+    .sidebar-visitor .visitor-stats-link {
+      display: inline-block;
+      margin-top: 0.35rem;
+      font-size: 0.74rem;
+    }
+    .visitor-placeholder {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 92px;
+      background:
+        radial-gradient(circle at 35% 30%, #dff7ff 0 20%, #56c3f5 44%, #1e88e5 78%, #0d47a1 100%);
+      box-shadow: inset -12px -10px 22px rgba(0,0,0,.16), 0 10px 18px rgba(0,0,0,.14);
+    }
+
   </style>
 </head>
 
@@ -226,6 +281,32 @@
       <a href="#experience" class="nav-link">🎓 <span data-zh="教育与经历" data-en="Experience"></span></a>
       <a href="#honors" class="nav-link">🏆 <span data-zh="荣誉奖项" data-en="Honors"></span></a>
     </nav>
+
+    <div class="sidebar-visitor" aria-label="Visitor statistics">
+      <div class="visitor-title">🌍✨ Visitor Globe</div>
+
+      <div class="visitor-globe" id="visitorGlobe">
+        <!--
+          若要启用真正的 MapMyVisitors 实时访客地球：
+          1. 打开 https://mapmyvisitors.com/
+          2. 创建你自己的 Visitor Globe
+          3. 用平台生成的 <script ...></script> 替换下面这个占位地球
+          不要直接使用别人的 MapMyVisitors ID，否则访问量会记到别人的账号。
+        -->
+        <div class="visitor-placeholder" title="Visitor Globe">🌏</div>
+      </div>
+
+      <p class="visitor-note"
+         data-zh="接入 MapMyVisitors 后可实时记录访客。"
+         data-en="Connect MapMyVisitors to record visits in real time."></p>
+
+      <a class="visitor-stats-link"
+         href="https://mapmyvisitors.com/"
+         target="_blank"
+         rel="noopener noreferrer">
+        View statistics ↗
+      </a>
+    </div>
 
     <div class="sidebar-footer">© 2026 Jia Hou</div>
   </aside>
